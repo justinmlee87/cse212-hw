@@ -1,5 +1,7 @@
-﻿public static class TakingTurns {
-    public static void Test() {
+﻿public static class TakingTurns
+{
+    public static void Test()
+    {
         // TODO Problem 1 - Run test cases and fix the code to match requirements
         // Test Cases
 
@@ -15,7 +17,7 @@
         // Console.WriteLine(players);    // This can be un-commented out for debug help
         while (players.Length > 0)
             players.GetNextPerson();
-        // Defect(s) Found: 
+        // Defect(s) Found: Players not displaying as expected. Displaying as not taking turns. Back to back.
 
         Console.WriteLine("---------");
 
@@ -28,9 +30,10 @@
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++)
+        {
             players.GetNextPerson();
-            // Console.WriteLine(players);
+            // Console.WriteLine(players); 
         }
 
         players.AddPerson("George", 3);
@@ -38,7 +41,7 @@
         while (players.Length > 0)
             players.GetNextPerson();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: Not displayhing in the correct order initially. Not taking turns. similar to Test 1
 
         Console.WriteLine("---------");
 
@@ -52,15 +55,16 @@
         players.AddPerson("Tim", 0);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: Showing no one in queue and not running Tim "Forever"
 
         Console.WriteLine("---------");
 
-         // Test 4
+        // Test 4
         // Scenario: Create a queue with the following people and turns: Tim (Forever), Sue (3)
         // Run 10 times.
         // Expected Result: Tim, Sue, Tim, Sue, Tim, Sue, Tim, Tim, Tim, Tim
@@ -69,11 +73,12 @@
         players.AddPerson("Tim", -3);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: Similar error as Test 3. Not running Tim forever. Also running out of order.
 
         Console.WriteLine("---------");
 
@@ -83,6 +88,6 @@
         Console.WriteLine("Test 5");
         players = new TakingTurnsQueue();
         players.GetNextPerson();
-        // Defect(s) Found:
+        // Defect(s) Found: Message already displaying "No one in the queue"
     }
 }
